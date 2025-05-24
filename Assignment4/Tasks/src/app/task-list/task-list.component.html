@@ -1,0 +1,27 @@
+<ng-container *ngIf="tasks$ | async as tasks">
+  <ng-container *ngIf="tasks.length; else noTasks">
+    <ng-container *ngFor="let task of tasks">
+      <app-task
+        *ngIf="editingTask?.id !== task.id"
+        [task]="task"
+        (edit)="onEditTask(task)"
+        (delete)="onDeleteTask(task)">
+      </app-task>
+
+      <app-task-form
+        *ngIf="editingTask?.id === task.id"
+        [task]="editingTask!"
+        [isEditMode]="true"
+        (saveTask)="onTaskSaved($event)">
+      </app-task-form>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #noTasks>
+    <p>No tasks available.</p>
+  </ng-template>
+</ng-container>
+
+<button mat-fab color="primary" (click)="AddTask()">
+  <mat-icon>add</mat-icon>
+</button>

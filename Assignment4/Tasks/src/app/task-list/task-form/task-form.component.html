@@ -1,0 +1,17 @@
+<mat-form-field appearance="outline" class="full-width">
+  <input matInput placeholder="Title" [(ngModel)]="task.title">
+</mat-form-field>
+
+<mat-form-field appearance="outline" class="full-width">
+  <input matInput placeholder="Description" [(ngModel)]="task.description">
+</mat-form-field>
+
+<mat-form-field appearance="outline" class="full-width">
+  <input matInput [matDatepicker]="picker" placeholder="Due Date" [(ngModel)]="task.dueDate" [readonly]="true">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="saveTaskClicked()">
+  {{ isEditMode ? 'Update Task' : 'Add Task' }}
+</button>

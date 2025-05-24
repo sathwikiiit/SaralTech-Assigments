@@ -1,0 +1,25 @@
+<mat-card class="task-card" [class.completed]="task.completed">
+    <div class="task-content">
+        <mat-checkbox class="task-checkbox" [(ngModel)]="task.completed" (change)="onCompletedChange()"></mat-checkbox>
+
+        <div class="task-details">
+            <h3 class="task-title">{{ task.title }}</h3>
+            <p *ngIf="task.description" class="task-desc">{{ task.description }}</p>
+            <p *ngIf="task.dueDate" class="due-date-chip">
+                Due Date:  {{ task.dueDate | date:'mediumDate' }}
+            </p>
+        </div>
+
+        <div class="task-actions">
+            <button mat-icon-button color="primary" aria-label="Edit task" (click)="onEditClick()">
+                <mat-icon >edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" aria-label="Delete task" (click)="onDeleteClick()">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div *ngIf="errorMsg" class="error-message" style="color: red; margin-top: 8px;">
+      {{ errorMsg }}
+    </div>
+</mat-card>

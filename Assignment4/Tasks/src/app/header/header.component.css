@@ -1,0 +1,71 @@
+mat-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  min-height: 64px;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.app-title {
+  font-size: 1.6em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  flex: 1 1 auto;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+a.mat-button {
+  margin-left: 12px;
+  font-size: 1.05em;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Hover/Active style (Material look) */
+a.mat-button:hover,
+a.mat-button.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* Responsive: mobile screens */
+@media (max-width: 560px) {
+  mat-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .app-title {
+    justify-content: center;
+    flex: none;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  a.mat-button {
+    margin: 0 auto;
+    width: 100%; /* Optional: make buttons full-width */
+    max-width: 300px;
+    box-sizing: border-box;
+    font-size: 1em;
+    padding: 10px 12px;
+  }
+}

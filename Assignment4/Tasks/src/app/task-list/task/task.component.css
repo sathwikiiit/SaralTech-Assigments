@@ -1,0 +1,57 @@
+.task-card {
+  margin: 12px 0;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transition: box-shadow 0.3s ease;
+}
+
+.task-card:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+
+.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+}
+
+.task-checkbox {
+  margin-right: 16px;
+}
+
+.task-details {
+  flex-grow: 1;
+}
+
+.task-title {
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.task-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.due-date-chip {
+  margin-top: 8px;
+  display: inline-flex;
+}
+
+mat-chip {
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
