@@ -1,0 +1,294 @@
+/* Color Palette for the interactive page */
+:root {
+    --primary-color: #28a745; /* A vibrant green */
+    --secondary-color: #1e7e34; /* Darker green for accents */
+    --light-bg-color: #f0f2f5; /* Light background for body */
+    --card-bg-color: #ffffff; /* White background for containers */
+    --text-color: #333; /* Dark grey for primary text */
+    --light-text-color: white; /* White for text on dark backgrounds */
+    --border-color: #ccc; /* Light grey for borders */
+    --error-color: #dc3545; /* Red for error messages */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack header, main, footer vertically */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    margin: 0;
+    background-color: var(--light-bg-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0; /* Space above nav links */
+    display: flex; /* Use flexbox for horizontal nav links */
+    justify-content: center;
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+    gap: 10px; /* Consistent spacing between nav items */
+}
+
+nav ul li {
+    margin: 0; /* Reset margin as gap handles spacing */
+}
+
+nav ul li a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    padding: 8px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    min-width: 80px; /* Ensure a minimum width for touch targets */
+    text-align: center;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Main content area styling */
+main {
+    flex: 1; /* Allows main to grow and push footer down */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px; /* Padding around the main content */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+/* Styles for content sections (Greeting and About) */
+.content-section {
+    display: none; /* Hide all sections by default */
+    width: 100%;
+    max-width: 600px; /* Max width for content readability */
+    margin: auto; /* Center the section if it doesn't take full main width */
+}
+
+/* Show the section whose ID matches the URL hash */
+.content-section:target {
+    display: block;
+}
+
+/* Show the greeting section by default when no hash is present */
+.content-section#greeting-section {
+    display: block;
+}
+
+/* Hide the greeting section if another section is targeted */
+.content-section#greeting-section:not(:target) {
+    display: none;
+}
+
+.container {
+    background-color: var(--card-bg-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%; /* Take full width of its parent (.content-section) */
+    box-sizing: border-box;
+}
+
+.about-content {
+    text-align: left; /* Align text left for readability in About section */
+    line-height: 1.6;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    display: flex; /* Use flexbox for input and button */
+    flex-direction: column; /* Stack them by default */
+    gap: 15px; /* Space between input and button */
+    align-items: center; /* Center items horizontally */
+}
+
+input[type="text"] {
+    width: 100%; /* Take full width of the input-group */
+    max-width: 300px; /* Max width for readability/aesthetic */
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto; /* Let button size itself, or set max-width if needed */
+    min-width: 150px; /* Ensure button is not too small */
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.greeting-message {
+    margin-top: 30px;
+    font-size: 1.6em;
+    color: var(--secondary-color);
+    font-weight: bold;
+    min-height: 1.6em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: forwards;
+}
+
+.greeting-message.show {
+    animation: fadeInUpBounce 0.8s ease-out forwards;
+}
+
+.error-message {
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: var(--error-color);
+    min-height: 0.95em;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.error-message.show {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeInUpBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center;
+        gap: 8px; /* Reduce gap when stacked */
+    }
+
+    nav ul li {
+        width: 100%; /* Make list items take full width to center links */
+        text-align: center;
+    }
+
+    nav ul li a {
+        padding: 10px 15px;
+        font-size: 0.95em;
+        width: calc(100% - 30px); /* Adjust width for padding */
+        min-width: unset; /* Remove min-width when stacked */
+    }
+
+    .container {
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .input-group {
+        flex-direction: column; /* Ensure vertical stacking on smaller screens too */
+        gap: 10px;
+    }
+
+    input[type="text"] {
+        max-width: 100%; /* Allow input to take full width */
+    }
+
+    button {
+        width: 100%; /* Make button full width on smaller screens */
+        max-width: 250px; /* Max width for button if it's too wide */
+        min-width: unset; /* Remove min-width */
+    }
+
+    .greeting-message {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    .container {
+        padding: 25px 15px;
+    }
+
+    nav ul li a {
+        padding: 8px 12px;
+    }
+}

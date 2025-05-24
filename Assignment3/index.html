@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Bar - Flexbox Layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Task Bar</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#tasks">Tasks</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Welcome to My Web Demo!</h2>
+            <p>Hey there! Thanks for checking out this little project. It's a hands-on demonstration of how I approach fundamental web development – focusing on solid HTML structure, clean CSS styling, and making sure everything looks great and works smoothly on any device, big or small.</p>
+            <p><strong>Just so you know, I put this together as part of my application for the Web Development Trainee position at SaralTech™. You might notice some content similarities with another assignment; this particular version specifically highlights my proficiency in CSS Layouts, especially using Flexbox, to create a more robust and adaptable design.</strong></p>
+            <p>My main goal here is to show you that I can build a clean, easy-to-manage, and user-friendly web layout from scratch.</p>
+            <p>Feel free to click around the navigation links above. You'll find a quick peek at the kinds of web services I'm showcasing, a bit about the project itself, and a way to get in touch.</p>
+            <h3>What you'll see here:</h3>
+            <ul>
+                <li>A website built with good old HTML5, structured just right.</li>
+                <li>All the styling done purely with CSS – no fancy frameworks or JavaScript for the main layout.</li>
+                <li>It's fully responsive, so it should look good whether you're on a desktop, tablet, or phone.</li>
+                <li>A neat trick using only CSS to switch between content sections without any page reloads.</li>
+            </ul>
+        </section>
+
+        <section id="tasks">
+            <h2>My Daily Tasks (Demo)</h2>
+            <p>This section provides a static representation of a simple task management interface. It's designed to illustrate how tasks could be displayed and managed in a real application, even though the add/remove/edit actions here are purely visual for this demonstration.</p>
+
+            <h3>Current Tasks:</h3>
+            <ul class="task-list">
+                <li><input type="checkbox" id="task1"><label for="task1">Finish Web Development Assignment for SaralTech™</label></li>
+                <li><input type="checkbox" id="task2"><label for="task2">Review responsive design principles</label></li>
+                <li><input type="checkbox" id="task3"><label for="task3">Prepare for upcoming interview</label></li>
+                <li><input type="checkbox" id="task4"><label for="task4">Buy groceries</label></li>
+            </ul>
+
+            <div class="task-actions">
+                <button class="task-button add-task">Add New Task (Demo)</button>
+                <button class="task-button remove-task">Remove Selected Task (Demo)</button>
+                <button class="task-button edit-task">Edit Task (Demo)</button>
+            </div>
+
+            <p class="note">Please note: The checkboxes and buttons in this section are for visual demonstration only. In a live application, these would be interactive and powered by JavaScript to manage your tasks dynamically.</p>
+        </section>
+
+        <section id="about" >
+            <h2>About This Little Project</h2>
+            <p>So, this Task Bar project? It's really just a hands-on way for me to show off some core web development skills. My main goal here was to create a clean, responsive, and robust layout using foundational web technologies. I leveraged HTML for structure and CSS, particularly Flexbox, for all the visual flair and dynamic arrangement of content.</p>
+            <p>I was also keen on setting up a functional navigation system that lets you jump between sections without needing any JavaScript – all thanks to a neat CSS trick called the `:target` pseudo-class.</p>
+            <p>Through building this, I really focused on:</p>
+            <ul>
+                <li>Sticking to modern web standards and best practices.</li>
+                <li>Keeping the code tidy and easy to understand.</li>
+                <li>Making sure it's accessible and friendly for anyone using it, no matter their device.</li>
+            </ul>
+            <p>It's a small demonstration, but I hope it gives you a good idea of how I approach building engaging web experiences with just HTML and CSS.</p>
+        </section>
+
+        <section id="contact" >
+            <h2>Let's Connect!</h2>
+            <p>Got questions about this demo? Curious about web development in general? Or maybe you just want to connect? I'd love to hear from you! While this contact form is just for show in this demo, it illustrates how you might gather information from visitors.</p>
+            <h3>Find Me Here:</h3>
+            <address>
+                <strong>Email:</strong> <a href="mailto:sathwik.sns@gmail.com">sathwik.sns@gmail.com</a><br>
+                <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sathwik-vadla-s311/">sathwik-vadla</a><br>
+                <strong>GitHub:</strong> <a href="https://github.com/sathwikiiit">sathwikiiit</a>
+            </address>
+            <p>Or, if you prefer, just fill out the form below:</p>
+            <form action="#" method="POST">
+                <p>
+                    <label for="name">Your Name:</label><br>
+                    <input type="text" id="name" name="name" required>
+                </p>
+                <p>
+                    <label for="email">Your Email:</label><br>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <label for="subject">Subject:</label><br>
+                    <input type="text" id="subject" name="subject">
+                </p>
+                <p>
+                    <label for="message">Your Message:</label><br>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </p>
+                <p>
+                    <button type="submit">Send Message</button>
+                </p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Demo Project. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

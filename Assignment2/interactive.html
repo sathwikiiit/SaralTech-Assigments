@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Page</title>
+    <link rel="stylesheet" href="interactive.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive Demo</h1>
+        <nav>
+            <ul>
+                <li><a href="#greeting-section">Greeting</a></li>
+                <li><a href="#about-section">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="greeting-section" class="content-section active">
+            <div class="container">
+                <h2>Say Hello!</h2>
+                <div class="input-group">
+                    <input type="text" id="nameInput" placeholder="Enter your name">
+                    <button id="greetButton">Greet Me</button>
+                </div>
+                <p id="greetingMessage" class="greeting-message"></p>
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+        </section>
+
+        <section id="about-section" class="content-section">
+            <div class="container about-content">
+                <h2>About This Demo</h2>
+                <p>This interactive page is designed to showcase fundamental JavaScript capabilities, including user input retrieval, dynamic content display, and basic form validation.</p>
+                <p>It's a simple example of how client-side scripting can enhance user experience by providing immediate feedback and personalized interactions without needing a full page reload.</p>
+                <p>The layout is built with responsive design in mind, ensuring it adapts well to various screen sizes, from desktops to mobile devices.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Interactive Demo. All Rights Reserved.</p>
+    </footer>
+
+    <script src="interactive.js" defer></script>
+</body>
+</html>
